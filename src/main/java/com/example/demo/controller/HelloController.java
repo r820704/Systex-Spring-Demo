@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.core.Book;
 
 @Controller
+@RequestMapping("/hellocontroller")
 public class HelloController {
     
 	@Autowired
@@ -19,10 +20,10 @@ public class HelloController {
 	@GetMapping("/hello123")
     public String hello(Model model) {
 		
-		model.addAttribute("bookName", book2.getName()); // （變數名稱，變數值)
+		model.addAttribute("bookName", book2.getName()); 
 		model.addAttribute("author", book2.getAuthor());
     	System.out.println("hello!");
-        return "hello"; // 要導入的html
+        return "hello"; 
     } 
 	
 	@RequestMapping(value = "/hello1", method = RequestMethod.GET)

@@ -1,10 +1,11 @@
 server:
   port: 8081
-
+  servlet:
+    context-path: /systex
 
 spring:
   thymeleaf:
-    prefixL: classpath:/templates/
-    mode: HTML5
+    prefix: classpath:/templates/
+    mode: HTML
     encoding: UTF-8
     suffix: .html
