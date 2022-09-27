@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<table>
+		  <tr>
+	         <td>代號</td>
+	         <td>名稱</td>
+	         <td>成交</td>
+	         <td>股本(億)</td>
+	         <td>產業別</td>
+	         <td>董事長</td>
+	      </tr>
+	
+	   <th:block th:each="stock : ${stockList}">
+	      <tr>
+	         <td th:text="${stock.id}"></td>
+	         <td th:text="${stock.stockName}"></td>
+	         <td th:text="${stock.price}"></td>
+	         <td th:text="${stock.capitalStock}"></td>
+	         <td th:text="${stock.type}"></td>
+	         <td th:text="${stock.representative}"></td>
+	      </tr>
+	   </th:block>
+	</table>
+</body>
+</html>
