@@ -1,6 +1,7 @@
-package com.example.demo.core;
+package com.example.demo.entity;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Stock {
 	
@@ -73,6 +74,25 @@ public class Stock {
 	}
 	public void setRepresentative(String representative) {
 		this.representative = representative;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(capitalStock, id, price, representative, stockName, type);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Stock other = (Stock) obj;
+		return Objects.equals(capitalStock, other.capitalStock) && Objects.equals(id, other.id)
+				&& Objects.equals(price, other.price) && Objects.equals(representative, other.representative)
+				&& Objects.equals(stockName, other.stockName) && Objects.equals(type, other.type);
 	}
 	
 	

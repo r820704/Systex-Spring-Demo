@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.config.DemoConfig;
-import com.example.demo.core.Book;
+import com.example.demo.entity.Book;
 
 import net.bytebuddy.description.modifier.MethodArguments;
 

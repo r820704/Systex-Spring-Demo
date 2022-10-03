@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,31 +12,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.core.Stock;
+import com.example.demo.entity.Stock;
+import com.example.demo.service.StockService;
 
 @Controller
 @RequestMapping("/springmvc")
 public class StockController {
 
 	@Autowired
-	public ArrayList<Stock> stockList;
+	public StockService stockService;
 	
 	@GetMapping("/stock")
-	public String allStock(Model model) {
-		model.addAttribute("stockList", stockList);
+	public String getStocks(Model model) throws IOException {
+		model.addAttribute("stockList", stockService.getStocks());
 		return "stock" ;
 	}
 	
 	@GetMapping("/stock/{id}")
-	public String getWithStockId(Model model, @PathVariable Long id) {
-		List response = stockList.stream()
-				.filter(stock -> stock.getId().equalsIgnoreCase(id.toString()))
-				.collect(Collectors.toList());
-		
-		System.out.println("id為"+ id.toString() + "   " + response);
-		model.addAttribute("stockList", response);
-		
+	public String getStockWithId(Model model, @PathVariable String id) {
+		model.addAttribute("stockList", stockService.getStockWithId(id));
 		return "stock" ;
 	}
 	

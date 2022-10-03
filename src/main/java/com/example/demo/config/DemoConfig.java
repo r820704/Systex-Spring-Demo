@@ -3,7 +3,7 @@ package com.example.demo.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.demo.core.Book;
+import com.example.demo.entity.Book;
 
 @Configuration
 public class DemoConfig {
