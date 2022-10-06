@@ -18,22 +18,22 @@ public class StockRepository {
 	private List<Stock> stocks = new ArrayList<>();
 
 	public StockRepository() throws IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("stock.txt"))) {
-		    String line;
-		    br.readLine();
-		    while ((line = br.readLine()) != null) {
-		        String[] values = line.split(SAPARATER_DELIMITER);
-		        Stock stock = new Stock();
-		        stock.setId(values[0]);
-		        stock.setStockName(values[1]);
-		        stock.setPrice(values[2]);
-		        stock.setCapitalStock(values[3]);
-		        stock.setType(values[4]);
-		        stock.setRepresentative(values[5]);
-		        System.out.println(stock.toString());
-		        stocks.add(stock);
-		    }
-		}
+//		try (BufferedReader br = new BufferedReader(new FileReader("stock.txt"))) {
+//		    String line;
+//		    br.readLine();
+//		    while ((line = br.readLine()) != null) {
+//		        String[] values = line.split(SAPARATER_DELIMITER);
+//		        Stock stock = new Stock();
+//		        stock.setId(values[0]);
+//		        stock.setStockName(values[1]);
+//		        stock.setPrice(values[2]);
+//		        stock.setCapitalStock(values[3]);
+//		        stock.setType(values[4]);
+//		        stock.setRepresentative(values[5]);
+//		        System.out.println(stock.toString());
+//		        stocks.add(stock);
+//		    }
+//		}
 	}
 	
 	public Stock deleteStock(String id) {

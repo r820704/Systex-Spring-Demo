@@ -9,3 +9,21 @@ spring:
     mode: HTML
     encoding: UTF-8
     suffix: .html
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect 
+    hibernate:
+      ddl-auto: none 
+    # ensure that script-based initialization is performed using schema.sql and data.sql directly.
+    #defer-datasource-initialization: true
+       
+  sql:
+    init:
+      mode: always

@@ -1,15 +1,33 @@
 package com.example.demo.entity;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "STOCK")
 public class Stock {
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long seqno;
+	
+	@Column
 	private String id;
+	@Column
 	private String stockName;
+	@Column
 	private String price;
+	@Column
 	private String capitalStock;
+	@Column
 	private String type;
+	@Column
 	private String representative;
 	
 	public Stock() {
@@ -94,6 +112,13 @@ public class Stock {
 				&& Objects.equals(price, other.price) && Objects.equals(representative, other.representative)
 				&& Objects.equals(stockName, other.stockName) && Objects.equals(type, other.type);
 	}
-	
+
+	public Long getSeqno() {
+		return seqno;
+	}
+
+	public void setSeqno(Long seqno) {
+		this.seqno = seqno;
+	}
 	
 }
