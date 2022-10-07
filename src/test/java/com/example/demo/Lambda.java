@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 public class Lambda {
 
@@ -41,4 +42,10 @@ class StringOrder {
     public static int byLexicographyIgnoreCase(String s1, String s2) {
         return s1.compareToIgnoreCase(s2);
     }
+    
+    public static void printData(List<?> list){
+		for(Object obj : list){
+			System.out.print(obj + "::");
+		}
+	}
 }
