@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Stock;
+import com.example.demo.entity.StockEntity;
 import com.example.demo.service.StockService;
 
 @RestController
@@ -25,26 +25,26 @@ public class StockRestController {
 	
 	
 	@GetMapping(path = "/stock")
-	public List<Stock> getStockWithId(@RequestParam(required = false, name = "id") String id) throws IOException {
-		if(id != null) {
-			return stockService.getStockWithId(id) ;
+	public List<StockEntity> getStockWithBrokerid(@RequestParam(required = false, name = "brokerid") String brokerid) throws IOException {
+		if(brokerid != null) {
+			return stockService.getStockWithBrokerid(brokerid) ;
 		}else {
 			return stockService.getStocks() ;
 		}
 	}
 	
 	@PostMapping("stock")
-	public Stock insertStock(@RequestBody Stock stockParm) {
+	public StockEntity insertStock(@RequestBody StockEntity stockParm) {
 		return stockService.insert(stockParm);
 	}
 	
 	@DeleteMapping("stock")
-	public Stock deteteStock(@RequestParam(name = "id") String id) {
-		return stockService.deteteStock(id);
+	public boolean deteteStock(@RequestParam(name = "brokerid") String brokerid) {
+		return stockService.deteteStock(brokerid);
 	}
 	
 	@PutMapping("stock")
-	public Stock UpdateStock(@RequestBody Stock updateParm) {
+	public StockEntity UpdateStock(@RequestBody StockEntity updateParm) {
 		return stockService.updateStock(updateParm);
 	}
 }

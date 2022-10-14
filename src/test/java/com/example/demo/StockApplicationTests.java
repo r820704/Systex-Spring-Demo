@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.example.demo.entity.Stock;
+import com.example.demo.entity.StockEntity;
 import com.example.demo.repository.StockRepository;
 
 @ExtendWith(SpringExtension.class)
@@ -20,9 +20,9 @@ public class StockApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		System.out.println("123");
-		List<Stock> list = stockRepository.getStocks();
-		System.out.println(list);
+//		System.out.println("123");
+//		List<StockEntity> list = stockRepository.getStocks();
+//		System.out.println(list);
 	}
 	
 }

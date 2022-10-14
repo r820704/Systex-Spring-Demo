@@ -1,4 +1,3 @@
-INSERT INTO STOCK(id, stockname, price, capitalstock, type, representative) VALUES ('2303', '聯電', '38.75', '1,248', '半導體業', '洪嘉聰');    
-INSERT INTO STOCK(id, stockname, price, capitalstock, type, representative) VALUES ('2327', '國巨', '322.5', '43.6', '電子零組件業', '陳泰銘');    
-
+INSERT INTO STOCK(brokerid, brokername, opendate, address, tel) VALUES ('5850', '統一', '1978-04-03', '台北市東興路8號1樓、2樓部分、3樓部分、5樓部分', '02-27478266');    
+    
 

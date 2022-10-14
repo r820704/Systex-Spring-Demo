@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Stock;
+import com.example.demo.entity.StockEntity;
 import com.example.demo.service.StockService;
 
 @Controller
@@ -32,7 +32,7 @@ public class StockController {
 	
 	@GetMapping("/stock/{id}")
 	public String getStockWithId(Model model, @PathVariable String id) {
-		model.addAttribute("stockList", stockService.getStockWithId(id));
+		model.addAttribute("stockList", stockService.getStockWithBrokerid(id));
 		return "stock" ;
 	}
 	
